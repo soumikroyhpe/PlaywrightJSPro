@@ -28,5 +28,26 @@ test('Dropdown', async ({ page }) => {
 
     expect(selectedValue).not.toBe('')
 
+    //############# Assertion-1 validate number of options #################
+    const options = countryDropdown.locator('option')
+
+    //Count how many options are present in the dropdown
+    const optionCount = await options.count();
+    console.log(optionCount)
+
+    //Assert that the dropdown contains more than 200 options
+    //This validates that the dropdown is properly populated 
+    expect(optionCount).toBeGreaterThan(200)
+
+
+    //################## Assertion 2 : validate presence of value ##############
+
+    //Retrieve the visible text of all <option> element in the dropdown
+    //This returns an array of country names as strings
+    const allcountries = await options.allTextContents();
+
+    //Verify that "India" is present in the dropdown options
+    expect(allcountries).toContain('India')
+
     await page.pause()
 })
