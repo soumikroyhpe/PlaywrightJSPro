@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Upload Demo</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .upload-box {
+            background: white;
+            width: 400px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        input[type="file"] {
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="upload-box">
+        <h2>File Upload Demo</h2>
+
+        <input type="file" id="fileUpload">
+
+        <br>
+
+        <button onclick="uploadFile()">Upload File</button>
+    </div>
+
+    <script>
+        function uploadFile() {
+            const fileInput = document.getElementById("fileUpload");
+
+            if (fileInput.files.length === 0) {
+                alert("Please select a file first!");
+            } else {
+                alert("Your file has now been uploaded!");
+            }
+        }
+    </script>
+
+</body>
+</html>

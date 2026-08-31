@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Dropdown Demo</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+
+    .dropdown {
+      width: 220px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      position: relative;
+      padding: 10px;
+      background-color: #fff;
+    }
+
+    .selected {
+      font-size: 14px;
+    }
+
+    .options {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border: 1px solid #ccc;
+      position: absolute;
+      width: 100%;
+      background-color: #fff;
+      display: none;
+      max-height: 150px;
+      overflow-y: auto;
+      z-index: 10;
+    }
+
+    .options li {
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    .options li:hover {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Custom Dropdown Example</h2>
+
+  <div id="countryDropdown" class="dropdown">
+    <div class="selected">Select Country</div>
+    <ul class="options">
+      <li data-value="IN">India</li>
+      <li data-value="US">United States</li>
+      <li data-value="DE">Germany</li>
+      <li data-value="JP">Japan</li>
+    </ul>
+  </div>
+
+  <script>
+    const dropdown = document.getElementById('countryDropdown');
+    const selected = dropdown.querySelector('.selected');
+    const options = dropdown.querySelector('.options');
+
+    dropdown.addEventListener('click', () => {
+      options.style.display =
+        options.style.display === 'block' ? 'none' : 'block';
+    });
+
+    options.querySelectorAll('li').forEach(option => {
+      option.addEventListener('click', () => {
+        selected.textContent = option.textContent;
+        options.style.display = 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>

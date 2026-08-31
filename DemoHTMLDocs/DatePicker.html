@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Date Picker Practice</title>
+
+<!-- jQuery UI CSS -->
+<link rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 40px;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  label {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+
+  input {
+    padding: 8px;
+    font-size: 16px;
+    width: 180px;
+    margin-bottom: 30px;
+  }
+</style>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- jQuery UI -->
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+<script>
+  $(function () {
+
+    // ✅ Date Picker 1: With Month & Year Dropdowns
+    $("#datepicker").datepicker({
+      changeMonth: true,
+      changeYear: true,
+      dateFormat: "mm/dd/yy"
+    });
+
+    // ✅ Date Picker 2: WITHOUT Dropdowns (Prev / Next only)
+    $("#datepickerNoDropdown").datepicker({
+      changeMonth: false,
+      changeYear: false,
+      dateFormat: "mm/dd/yy"
+    });
+
+  });
+</script>
+</head>
+
+<body>
+
+<h2>Date Picker Automation Practice</h2>
+
+<!-- ================== DATE PICKER WITH DROPDOWNS ================== -->
+<label for="datepicker">Date Picker (Dropdowns):</label><br>
+<input type="text" id="datepicker" />
+
+<br><br>
+
+<!-- ================== DATE PICKER WITHOUT DROPDOWNS ================== -->
+<label for="datepickerNoDropdown">Date Picker (Prev / Next only):</label><br>
+<input type="text" id="datepickerNoDropdown" />
+
+</body>
+</html>

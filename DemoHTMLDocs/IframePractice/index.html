@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>iFrame Practice Page</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header { background-color: #007acc; color: white; padding: 10px; text-align: center; }
+    .frames-container { display: flex; height: 400px; }
+    iframe { border: 1px solid #ccc; width: 100%; }
+    .left-frame { width: 30%; }
+    .right-frame { width: 70%; }
+    .bottom-frame { width: 100%; height: 150px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Practice iFrame Page</h1>
+    <p>This page contains multiple iframes to practice switching and interaction using Selenium.</p>
+  </header>
+
+  <div class="frames-container">
+    <iframe src="left-frame.html" name="leftFrame" class="left-frame"></iframe>
+    <iframe src="right-frame.html" name="rightFrame" class="right-frame"></iframe>
+  </div>
+
+  <iframe src="bottom-frame.html" name="bottomFrame" class="bottom-frame"></iframe>
+</body>
+</html>
