@@ -27,8 +27,8 @@ test('NestedFrameDemo', async ({ page }) => {
 
     // locate child text on childframe and verify child text
     const childFrameText = await childFrame.locator("#childText").innerText()
-
     expect(childFrameText).toBe('This is a nested (child) frame.')
+
     await page.pause();
 
 
